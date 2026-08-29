@@ -1,0 +1,22 @@
+# litmus-pod-delete.yaml
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChaosEngine
+metadata:
+  name: pod-delete-engine
+spec:
+  appinfo:
+    appns: default
+    applabel: "app=backend"
+    appkind: deployment
+  chaosServiceAccount: litmus-admin
+  experiments:
+    - name: pod-delete
+      spec:
+        components:
+          env:
+            - name: TOTAL_CHAOS_DURATION
+              value: "60"
+            - name: CHAOS_INTERVAL
+              value: "10"
+            - name: FORCE
+              value: "true"

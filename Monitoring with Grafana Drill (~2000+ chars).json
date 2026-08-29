@@ -1,0 +1,22 @@
+{
+  "dashboard": {
+    "title": "Microservices Monitoring",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Gateway Requests",
+        "targets": [{ "expr": "rate(http_requests_total{job=\"gateway\"}[5m])" }]
+      },
+      {
+        "type": "graph",
+        "title": "User Service Requests",
+        "targets": [{ "expr": "rate(http_requests_total{job=\"user-service\"}[5m])" }]
+      },
+      {
+        "type": "graph",
+        "title": "Product Service Requests",
+        "targets": [{ "expr": "rate(http_requests_total{job=\"product-service\"}[5m])" }]
+      }
+    ]
+  }
+}

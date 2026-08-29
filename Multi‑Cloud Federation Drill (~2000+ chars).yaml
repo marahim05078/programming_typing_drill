@@ -1,0 +1,23 @@
+apiVersion: types.kubefed.io/v1beta1
+kind: FederatedDeployment
+metadata:
+  name: backend-global
+spec:
+  template:
+    spec:
+      replicas: 3
+      selector:
+        matchLabels: { app: backend }
+      template:
+        metadata:
+          labels: { app: backend }
+        spec:
+          containers:
+            - name: backend
+              image: my-backend:latest
+              ports: [{ containerPort: 5000 }]
+  placement:
+    clusters:
+      - name: cluster-us-east
+      - name: cluster-eu-west
+      - name: cluster-asia-south

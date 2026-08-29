@@ -1,0 +1,53 @@
+# AWS EKS deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-aws
+spec:
+  replicas: 2
+  selector:
+    matchLabels: { app: backend }
+  template:
+    metadata:
+      labels: { app: backend }
+    spec:
+      containers:
+        - name: backend
+          image: my-backend:aws
+          ports: [{ containerPort: 5000 }]
+
+# Azure AKS deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-azure
+spec:
+  replicas: 2
+  selector:
+    matchLabels: { app: backend }
+  template:
+    metadata:
+      labels: { app: backend }
+    spec:
+      containers:
+        - name: backend
+          image: my-backend:azure
+          ports: [{ containerPort: 5000 }]
+
+# GCP GKE deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-gcp
+spec:
+  replicas: 2
+  selector:
+    matchLabels: { app: backend }
+  template:
+    metadata:
+      labels: { app: backend }
+    spec:
+      containers:
+        - name: backend
+          image: my-backend:gcp
+          ports: [{ containerPort: 5000 }]

@@ -1,0 +1,14 @@
+# kiali-config.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kiali
+  namespace: istio-system
+data:
+  kiali.yaml: |
+    server:
+      port: 20001
+    deployment:
+      accessible_namespaces: ["**"]
+    auth:
+      strategy: anonymous

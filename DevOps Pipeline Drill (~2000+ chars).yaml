@@ -1,0 +1,29 @@
+# GitLab CI/CD pipeline
+stages:
+  - build
+  - test
+  - deploy
+
+build-job:
+  stage: build
+  image: node:18
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+
+test-job:
+  stage: test
+  image: node:18
+  script:
+    - npm install
+    - npm test
+
+deploy-job:
+  stage: deploy
+  image: bitnami/kubectl:latest
+  script:
+    - kubectl apply -f kubernetes-deployment.yaml
+    - kubectl apply -f kubernetes-service.yaml

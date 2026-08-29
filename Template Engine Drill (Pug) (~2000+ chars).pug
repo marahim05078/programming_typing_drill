@@ -1,0 +1,13 @@
+//- views/profile.pug
+doctype html
+html
+  head
+    title Profile
+  body
+    h1 User Profile
+    p Name: #{user.name}
+    p Email: #{user.email}
+    if user.roles.includes("admin")
+      p Role: Admin
+    else
+      p Role: User

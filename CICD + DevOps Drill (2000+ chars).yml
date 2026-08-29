@@ -1,0 +1,25 @@
+# GitHub Actions CI/CD
+name: Node.js CI/CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
+      - run: npm install
+      - run: npm test
+      - run: npm run build
+      - name: Deploy to Kubernetes
+        uses: azure/k8s-deploy@v1
+        with:
+          manifests: |
+            kubernetes-deployment.yaml
+            kubernetes-service.yaml

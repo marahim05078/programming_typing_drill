@@ -1,0 +1,15 @@
+<!-- views/profile.ejs -->
+<!DOCTYPE html>
+<html>
+<head><title>Profile</title></head>
+<body>
+  <h1>User Profile</h1>
+  <p>Name: <%= user.name %></p>
+  <p>Email: <%= user.email %></p>
+  <% if(user.roles.includes("admin")){ %>
+    <p>Role: Admin</p>
+  <% } else { %>
+    <p>Role: User</p>
+  <% } %>
+</body>
+</html>

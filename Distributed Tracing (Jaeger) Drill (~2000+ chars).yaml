@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jaeger-config
+data:
+  sampling: |
+    type: probabilistic
+    param: 0.1
+  storage:
+    type: elasticsearch
+    options:
+      es.server-urls: http://elasticsearch:9200

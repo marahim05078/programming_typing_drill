@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  user-service:
+    build: ./userService
+    ports: ["6000:6000"]
+  product-service:
+    build: ./productService
+    ports: ["7000:7000"]
+  gateway:
+    build: ./gateway
+    ports: ["8000:8000"]
+  mongo:
+    image: mongo:6
+    ports: ["27017:27017"]
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: drilldb
+    ports: ["5432:5432"]

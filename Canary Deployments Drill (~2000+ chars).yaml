@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-canary
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+      version: canary
+  template:
+    metadata:
+      labels:
+        app: backend
+        version: canary
+    spec:
+      containers:
+        - name: backend
+          image: my-backend:canary
+          ports:
+            - containerPort: 5000
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: backend-destination
+spec:
+  host: backend-service
+  subsets:
+    - name: stable
+      labels: { version: stable }
+    - name: canary
+      labels: { version: canary }
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: backend-split
+spec:
+  hosts:
+    - backend-service
+  http:
+    - route:
+        - destination: { host: backend-service, subset: stable }
+          weight: 80
+        - destination: { host: backend-service, subset: canary }
+          weight: 20
