@@ -1,0 +1,44 @@
+<!-- Grid -->
+<div class="grid grid-cols-12 gap-2">
+  <div class="col-span-6 bg-gray-200">Half width</div>
+  <div class="col-span-6 bg-gray-400">Half width</div>
+</div>
+
+<!-- Flexbox -->
+<div class="flex flex-wrap justify-center items-center">
+  <div class="p-4 bg-red-200">Flex item</div>
+  <div class="p-4 bg-blue-200">Flex item</div>
+</div>
+
+<!-- Positioning -->
+<div class="relative">
+  <div class="absolute top-0 left-0 bg-yellow-200">Absolute positioned</div>
+</div>
+
+<!-- Z-index -->
+<div class="z-10">Z-index 10</div>
+<div class="z-50">Z-index 50</div>
+
+<!-- Responsive design -->
+<p class="sm:text-sm md:text-lg lg:text-xl xl:text-2xl">Responsive text sizes</p>
+<div class="sm:p-2 md:p-6 lg:p-10 xl:p-20">Responsive padding</div>
+<div class="sm:grid-cols-2 lg:grid-cols-4 grid gap-4">Responsive grid</div>
+
+<!-- Forms & Interactivity -->
+<input type="text" class="form-input focus:ring focus:border-blue-500" placeholder="Username">
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+<input type="checkbox" class="form-checkbox text-green-500">
+<input type="radio" class="form-radio text-red-500">
+
+<!-- Advanced Effects -->
+<!-- Multi-stop gradient -->
+<div class="bg-gradient-to-tr from-green-400 via-blue-500 to-purple-600 p-6 text-white">Multi-stop gradient</div>
+
+<!-- Dark mode -->
+<div class="dark:bg-gray-900 dark:text-white p-6">Dark mode block</div>
+
+<!-- Custom animation -->
+<style>
+@keyframes wiggle { 0%,100%{transform:rotate(-3deg);} 50%{transform:rotate(3deg);} }
+</style>
+<div class="animate-[wiggle_1s_ease-in-out_infinite]">Custom wiggle</div>

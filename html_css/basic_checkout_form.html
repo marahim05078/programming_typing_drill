@@ -1,0 +1,98 @@
+<form class="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-8 space-y-6">
+  <h2 class="text-2xl font-bold text-center">Checkout</h2>
+
+  <!-- Billing Information -->
+  <fieldset class="border border-gray-300 rounded p-6">
+    <legend class="text-lg font-bold text-gray-700">Billing Information</legend>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">First Name</label>
+        <input type="text" placeholder="John" class="mt-1 block w-full border rounded px-3 py-2 focus:ring focus:border-blue-500">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Last Name</label>
+        <input type="text" placeholder="Doe" class="mt-1 block w-full border rounded px-3 py-2 focus:ring focus:border-blue-500">
+      </div>
+      <div class="md:col-span-2">
+        <label class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" placeholder="john@example.com" class="mt-1 block w-full border rounded px-3 py-2 focus:ring focus:border-green-500">
+      </div>
+    </div>
+  </fieldset>
+
+  <!-- Shipping Address -->
+  <fieldset class="border border-gray-300 rounded p-6">
+    <legend class="text-lg font-bold text-gray-700">Shipping Address</legend>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+      <div class="md:col-span-2">
+        <label class="block text-sm font-medium text-gray-700">Street Address</label>
+        <input type="text" placeholder="123 Main St" class="mt-1 block w-full border rounded px-3 py-2 focus:ring focus:border-purple-500">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">City</label>
+        <input type="text" placeholder="Dhaka" class="mt-1 block w-full border rounded px-3 py-2 focus:ring focus:border-purple-500">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">State</label>
+        <input type="text" placeholder="Dhaka Division" class="mt-1 block w-full border rounded px-3 py-2 focus:ring focus:border-purple-500">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Zip Code</label>
+        <input type="text" placeholder="1207" class="mt-1 block w-full border rounded px-3 py-2 focus:ring focus:border-purple-500">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Country</label>
+        <select class="w-full border rounded px-3 py-2 focus:ring focus:border-purple-500">
+          <option>Bangladesh</option>
+          <option>India</option>
+          <option>USA</option>
+          <option>UK</option>
+        </select>
+      </div>
+    </div>
+  </fieldset>
+
+  <!-- Payment Details -->
+  <fieldset class="border border-gray-300 rounded p-6">
+    <legend class="text-lg font-bold text-gray-700">Payment Details</legend>
+    <div class="space-y-4 mt-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Card Number</label>
+        <input type="text" placeholder="1234 5678 9012 3456" class="mt-1 block w-full border rounded px-3 py-2 focus:ring focus:border-indigo-500">
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Expiry Date</label>
+          <input type="text" placeholder="MM/YY" class="mt-1 block w-full border rounded px-3 py-2 focus:ring focus:border-indigo-500">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">CVV</label>
+          <input type="text" placeholder="123" class="mt-1 block w-full border rounded px-3 py-2 focus:ring focus:border-indigo-500">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <!-- Order Summary -->
+  <fieldset class="border border-gray-300 rounded p-6">
+    <legend class="text-lg font-bold text-gray-700">Order Summary</legend>
+    <ul class="divide-y divide-gray-200">
+      <li class="flex justify-between py-2">
+        <span>Product 1</span><span>$10</span>
+      </li>
+      <li class="flex justify-between py-2">
+        <span>Product 2</span><span>$20</span>
+      </li>
+      <li class="flex justify-between py-2 font-bold">
+        <span>Total</span><span>$30</span>
+      </li>
+    </ul>
+  </fieldset>
+
+  <!-- Submit -->
+  <div class="text-center">
+    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded">
+      Complete Purchase
+    </button>
+  </div>
+</form>
